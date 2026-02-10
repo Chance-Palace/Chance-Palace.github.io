@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotel Chance Palace - Premier wedding venue in Veyangoda, Sri Lanka. Elegant reception halls, outdoor event spaces, and professional catering for your special day.">
+    <title>Hotel Chance Palace - Premier Wedding & Event Venue in Veyangoda, Sri Lanka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #154531;
+            --primary-dark: #0d2e1f;
+            --primary-light: #1d5c42;
+            --accent: #000000;
+            --accent-light: #2d2d2d;
+            --text-dark: #000000;
+            --text-light: #f5f5f5;
+            --bg-cream: #fafaf8;
+            --bg-light: #f0f4f1;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-cream);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hero Slider */
+        .hero-slide {
+            display: none;
+            animation: fadeSlide 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hero-slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Parallax Effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Fade In Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* Luxury Underline */
+        .luxury-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .luxury-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        
+        /* Ornamental Divider */
+        .ornamental {
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--primary);
+        }
+        
+        .ornamental::before,
+        .ornamental::after {
+            content: '◆';
+            padding: 0 1.5rem;
+            opacity: 0.6;
+        }
+        
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(21, 69, 49, 0.2);
+        }
+        
+        /* Texture Overlay */
+        .texture-overlay {
+            position: relative;
+        }
+        
+        .texture-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23154531' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        /* Green Accent Line */
+        .accent-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 3rem auto;
+            max-width: 200px;
+        }
+        
+        /* Premium Button */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-premium:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Gallery Overlay */
+        .gallery-overlay {
+            background: linear-gradient(180deg, transparent 0%, rgba(21, 69, 49, 0.95) 100%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Number Badge */
+        .number-badge {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            color: var(--primary);
+            opacity: 0.15;
+            line-height: 1;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        /* Testimonial Card */
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 241, 0.95) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Green Gradient Background */
+        .green-gradient {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+        }
+        
+        /* Decorative Corner */
+        .decorative-corner {
+            position: relative;
+        }
+        
+        .decorative-corner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border-top: 3px solid var(--primary);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .decorative-corner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            border-bottom: 3px solid var(--primary);
+            border-right: 3px solid var(--primary);
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-500 bg-white/98 backdrop-blur-md shadow-md" id="header">
+        <nav class="container mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between py-5">
+                <!-- Logo -->
+                <div class="text-left">
+                    <h1 class="text-3xl lg:text-4xl font-bold tracking-wide" style="color: var(--accent);">Hotel Chance Palace</h1>
+                    <p class="text-xs lg:text-sm tracking-widest uppercase" style="color: var(--primary);">Where Dreams Come True</p>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="lg:hidden focus:outline-none" id="mobileMenuToggle" style="color: var(--accent);">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex items-center space-x-10 text-sm font-medium tracking-wide uppercase">
+                    <li><a href="#home" class="hover:opacity-70 transition" style="color: var(--accent);">Home</a></li>
+                    <li><a href="#about" class="hover:opacity-70 transition" style="color: var(--accent);">About</a></li>
+                    <li><a href="#services" class="hover:opacity-70 transition" style="color: var(--accent);">Services</a></li>
+                    <li><a href="#gallery" class="hover:opacity-70 transition" style="color: var(--accent);">Gallery</a></li>
+                    <li><a href="#contact" class="hover:opacity-70 transition" style="color: var(--accent);">Contact</a></li>
+                </ul>
+
+                <!-- Book Now Button -->
+                <a href="#contact" class="hidden lg:inline-block btn-premium px-8 py-3 text-white text-sm tracking-wider uppercase font-medium relative z-10 green-gradient">
+                    Reserve Now
+                </a>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden pb-6" id="mobileMenu">
+                <ul class="flex flex-col space-y-4 text-sm font-medium tracking-wide uppercase">
+                    <li><a href="#home" class="block hover:opacity-70 transition" style="color: var(--accent);">Home</a></li>
+                    <li><a href="#about" class="block hover:opacity-70 transition" style="color: var(--accent);">About</a></li>
+                    <li><a href="#services" class="block hover:opacity-70 transition" style="color: var(--accent);">Services</a></li>
+                    <li><a href="#gallery" class="block hover:opacity-70 transition" style="color: var(--accent);">Gallery</a></li>
+                    <li><a href="#contact" class="block hover:opacity-70 transition" style="color: var(--accent);">Contact</a></li>
+                    <li><a href="#contact" class="block px-6 py-3 text-white text-center text-sm tracking-wider uppercase green-gradient">Reserve Now</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen">
+        <div class="hero-slider h-full">
+            <!-- Slide 1 -->
+            <div class="hero-slide active h-full bg-cover bg-center relative" style="background-image: linear-gradient(rgba(21, 69, 49, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519167758481-83f29da8a39e?w=1920');">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+                    <div class="text-white max-w-5xl">
+                        <h2 class="text-5xl md:text-7xl lg:text-8xl font-light mb-6 fade-in">Your Dream Wedding Awaits</h2>
+                        <div class="ornamental text-2xl my-8 fade-in delay-100" style="color: #fff;"></div>
+                        <p class="text-lg md:text-xl lg:text-2xl font-light mb-12 tracking-wide fade-in delay-200">Experience elegance and perfection at Veyangoda's premier wedding venue</p>
+                        <a href="#contact" class="inline-block btn-premium px-14 py-4 text-white text-sm tracking-widest uppercase font-medium border-2 border-white hover:bg-white fade-in delay-300" style="transition: all 0.4s;">
+                            <span class="relative z-10" style="transition: color 0.4s;">Plan Your Event</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide h-full bg-cover bg-center relative" style="background-image: linear-gradient(rgba(21, 69, 49, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920');">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+                    <div class="text-white max-w-5xl">
+                        <h2 class="text-5xl md:text-7xl lg:text-8xl font-light mb-6">Breathtaking Outdoor Spaces</h2>
+                        <div class="ornamental text-2xl my-8" style="color: #fff;"></div>
+                        <p class="text-lg md:text-xl lg:text-2xl font-light mb-12 tracking-wide">Lush gardens and scenic venues for unforgettable celebrations</p>
+                        <a href="#services" class="inline-block btn-premium px-14 py-4 text-white text-sm tracking-widest uppercase font-medium border-2 border-white hover:bg-white" style="transition: all 0.4s;">
+                            <span class="relative z-10" style="transition: color 0.4s;">Explore Our Venues</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide h-full bg-cover bg-center relative" style="background-image: linear-gradient(rgba(21, 69, 49, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920');">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+                    <div class="text-white max-w-5xl">
+                        <h2 class="text-5xl md:text-7xl lg:text-8xl font-light mb-6">Luxurious Reception Halls</h2>
+                        <div class="ornamental text-2xl my-8" style="color: #fff;"></div>
+                        <p class="text-lg md:text-xl lg:text-2xl font-light mb-12 tracking-wide">Modern amenities and elegant interiors for up to 500 guests</p>
+                        <a href="#gallery" class="inline-block btn-premium px-14 py-4 text-white text-sm tracking-widest uppercase font-medium border-2 border-white hover:bg-white" style="transition: all 0.4s;">
+                            <span class="relative z-10" style="transition: color 0.4s;">View Gallery</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <button class="absolute left-8 top-1/2 transform -translate-y-1/2 text-white hover:opacity-70 transition text-3xl z-10" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="absolute right-8 top-1/2 transform -translate-y-1/2 text-white hover:opacity-70 transition text-3xl z-10" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-10">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-24 texture-overlay" style="background: var(--bg-cream);">
+        <div class="container mx-auto px-6 lg:px-12 text-center max-w-5xl">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-light mb-6 luxury-underline" style="color: var(--accent);">Welcome to Hotel Chance Palace</h2>
+            <div class="accent-line"></div>
+            <p class="text-lg md:text-xl leading-relaxed mb-8" style="color: var(--text-dark);">
+                Located in the heart of Veyangoda, Hotel Chance Palace has been the premier destination for weddings and outdoor events for years. Our expertise in creating magical moments, combined with our stunning venues and professional service, makes us the perfect choice for your special celebration.
+            </p>
+            <div class="flex items-center justify-center space-x-3 mt-8">
+                <div class="flex text-2xl" style="color: var(--primary);">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p class="text-sm tracking-wide font-medium" style="color: var(--accent);">4.0/5 · 497 Google Reviews</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-24 relative bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline" style="color: var(--accent);">Our Services</h2>
+                <div class="accent-line"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Service Card 1 -->
+                <div class="card-hover bg-white p-10 border-2 relative" style="border-color: var(--primary);">
+                    <div class="number-badge">01</div>
+                    <div class="mb-6">
+                        <i class="fas fa-ring text-5xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light mb-4" style="color: var(--accent);">Wedding Packages</h3>
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">Customizable wedding packages tailored to your vision, including ceremony setups, bridal suites, and complete coordination.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Full ceremony setup</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Bridal suite access</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Professional coordination</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Honeymoon arrangements</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="card-hover bg-white p-10 border-2 relative" style="border-color: var(--primary);">
+                    <div class="number-badge">02</div>
+                    <div class="mb-6">
+                        <i class="fas fa-tree text-5xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light mb-4" style="color: var(--accent);">Outdoor Events</h3>
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">Scenic gardens perfect for outdoor ceremonies, corporate gatherings, birthday parties, and team-building activities.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Weather-proof tents</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Professional lighting</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> AV support</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Garden party setups</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="card-hover bg-white p-10 border-2 relative" style="border-color: var(--primary);">
+                    <div class="number-badge">03</div>
+                    <div class="mb-6">
+                        <i class="fas fa-building text-5xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light mb-4" style="color: var(--accent);">Reception Hall</h3>
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">Spacious, air-conditioned reception halls with modern amenities, accommodating up to 500 guests in elegant comfort.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Up to 500 guest capacity</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Audio-visual equipment</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Flexible layouts</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Climate controlled</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="card-hover bg-white p-10 border-2 relative" style="border-color: var(--primary);">
+                    <div class="number-badge">04</div>
+                    <div class="mb-6">
+                        <i class="fas fa-utensils text-5xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light mb-4" style="color: var(--accent);">Professional Catering</h3>
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">Exquisite menu options from traditional Sri Lankan cuisine to international fusion dishes, prepared by expert chefs.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Sri Lankan specialties</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> International cuisine</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Custom menus</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Dietary accommodations</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="card-hover bg-white p-10 border-2 relative" style="border-color: var(--primary);">
+                    <div class="number-badge">05</div>
+                    <div class="mb-6">
+                        <i class="fas fa-palette text-5xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light mb-4" style="color: var(--accent);">Themed Decorations</h3>
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">Professional decorators create stunning themed environments with floral arrangements, lighting, and custom designs.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Floral arrangements</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Custom themes</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Stage decorations</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Lighting design</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="card-hover bg-white p-10 border-2 relative" style="border-color: var(--primary);">
+                    <div class="number-badge">06</div>
+                    <div class="mb-6">
+                        <i class="fas fa-music text-5xl" style="color: var(--primary);"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light mb-4" style="color: var(--accent);">Entertainment</h3>
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">Complete entertainment solutions including live music arrangements, DJ services, and audio-visual production.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Live music bands</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Professional DJs</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Sound systems</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-3" style="color: var(--primary);"></i> Lighting effects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 parallax texture-overlay relative green-gradient">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline text-white">Why Choose Us</h2>
+                <div class="accent-line" style="background: linear-gradient(90deg, transparent, #fff, transparent);"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center text-white">
+                    <i class="fas fa-leaf text-6xl mb-6 opacity-90"></i>
+                    <h4 class="text-2xl font-light mb-4">Scenic Gardens</h4>
+                    <p class="text-sm leading-relaxed opacity-90">Lush, well-maintained gardens perfect for outdoor ceremonies and photo opportunities</p>
+                </div>
+
+                <div class="text-center text-white">
+                    <i class="fas fa-calendar-check text-6xl mb-6 opacity-90"></i>
+                    <h4 class="text-2xl font-light mb-4">Personalized Planning</h4>
+                    <p class="text-sm leading-relaxed opacity-90">Dedicated event coordinators to handle every detail of your special day</p>
+                </div>
+
+                <div class="text-center text-white">
+                    <i class="fas fa-camera text-6xl mb-6 opacity-90"></i>
+                    <h4 class="text-2xl font-light mb-4">Photography Partnerships</h4>
+                    <p class="text-sm leading-relaxed opacity-90">Collaborations with top photographers to capture your precious moments</p>
+                </div>
+
+                <div class="text-center text-white">
+                    <i class="fas fa-parking text-6xl mb-6 opacity-90"></i>
+                    <h4 class="text-2xl font-light mb-4">On-Site Parking</h4>
+                    <p class="text-sm leading-relaxed opacity-90">Ample parking space for all your guests with convenient access</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24" style="background: var(--bg-cream);">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline" style="color: var(--accent);">What Our Clients Say</h2>
+                <div class="accent-line"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 border-2 decorative-corner" style="border-color: var(--primary);">
+                    <i class="fas fa-quote-left text-4xl mb-6" style="color: var(--primary);"></i>
+                    <p class="text-base leading-relaxed mb-8 italic" style="color: var(--text-dark);">Hotel Chance Palace made our wedding day absolutely perfect! The gardens were stunning, the staff was incredibly professional, and every detail was handled with care.</p>
+                    <div class="border-t-2 pt-6" style="border-color: var(--primary);">
+                        <h4 class="text-xl font-light mb-2" style="color: var(--accent);">Priya & Sandun</h4>
+                        <p class="text-sm mb-3" style="color: var(--text-dark); opacity: 0.7;">Wedding · June 2024</p>
+                        <div class="flex text-xl" style="color: var(--primary);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 border-2 decorative-corner" style="border-color: var(--primary);">
+                    <i class="fas fa-quote-left text-4xl mb-6" style="color: var(--primary);"></i>
+                    <p class="text-base leading-relaxed mb-8 italic" style="color: var(--text-dark);">We hosted our corporate event here and were blown away by the facilities and service. The outdoor space was perfect for team building, and the catering was exceptional.</p>
+                    <div class="border-t-2 pt-6" style="border-color: var(--primary);">
+                        <h4 class="text-xl font-light mb-2" style="color: var(--accent);">Tech Solutions Ltd.</h4>
+                        <p class="text-sm mb-3" style="color: var(--text-dark); opacity: 0.7;">Corporate Event · August 2024</p>
+                        <div class="flex text-xl" style="color: var(--primary);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 border-2 decorative-corner" style="border-color: var(--primary);">
+                    <i class="fas fa-quote-left text-4xl mb-6" style="color: var(--primary);"></i>
+                    <p class="text-base leading-relaxed mb-8 italic" style="color: var(--text-dark);">From the initial planning to the execution, everything was flawless. The reception hall is elegant, the food was delicious, and our guests are still talking about it!</p>
+                    <div class="border-t-2 pt-6" style="border-color: var(--primary);">
+                        <h4 class="text-xl font-light mb-2" style="color: var(--accent);">Amara & Kasun</h4>
+                        <p class="text-sm mb-3" style="color: var(--text-dark); opacity: 0.7;">Wedding · September 2024</p>
+                        <div class="flex text-xl" style="color: var(--primary);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800" alt="Hotel Chance Palace" class="w-full shadow-2xl">
+                    <div class="absolute -bottom-8 -right-8 px-12 py-8 text-white green-gradient">
+                        <h3 class="text-5xl font-light mb-2">Since 2010</h3>
+                        <p class="text-lg tracking-widest uppercase opacity-90">Creating Memories</p>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline" style="color: var(--accent);">About Hotel Chance Palace</h2>
+                    <div class="accent-line mx-0"></div>
+                    
+                    <p class="text-base leading-relaxed mb-6" style="color: var(--text-dark);">
+                        Nestled in the beautiful town of Veyangoda, Hotel Chance Palace has established itself as the region's most trusted venue for weddings and special events. Our journey began with a simple mission: to create unforgettable experiences that celebrate life's most precious moments.
+                    </p>
+                    
+                    <p class="text-base leading-relaxed mb-8" style="color: var(--text-dark);">
+                        Located at Mallehewa Road, Kottala, Veyangoda 11100, our venue combines natural beauty with modern sophistication. We take pride in our attention to detail, exceptional service, and commitment to making every event truly special.
+                    </p>
+
+                    <h3 class="text-3xl font-light mb-4" style="color: var(--accent);">Our Mission</h3>
+                    <p class="text-base leading-relaxed mb-8" style="color: var(--text-dark);">
+                        We strive to transform your vision into reality, providing a seamless blend of elegance, functionality, and personalized service. Whether it's an intimate gathering or a grand celebration, we ensure every moment is crafted to perfection.
+                    </p>
+
+                    <h3 class="text-3xl font-light mb-6" style="color: var(--accent);">Reception Hall Features</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--primary);"></i>
+                            <span class="text-sm">Elegant customizable décor</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--primary);"></i>
+                            <span class="text-sm">Flexible event layouts</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--primary);"></i>
+                            <span class="text-sm">Audio-visual equipment</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--primary);"></i>
+                            <span class="text-sm">Climate-controlled comfort</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--primary);"></i>
+                            <span class="text-sm">Professional lighting</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle mr-3 mt-1" style="color: var(--primary);"></i>
+                            <span class="text-sm">Spacious dance floor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="services" class="py-24 texture-overlay" style="background: var(--bg-light);">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline" style="color: var(--accent);">Wedding Packages</h2>
+                <div class="accent-line"></div>
+                <p class="text-lg mt-8 max-w-3xl mx-auto" style="color: var(--text-dark);">Turn your dream wedding into reality with our comprehensive packages. We handle every detail so you can focus on celebrating your love.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Basic Package -->
+                <div class="card-hover bg-white p-10 border-2" style="border-color: var(--primary);">
+                    <h4 class="text-2xl font-light mb-2" style="color: var(--accent);">Basic Package</h4>
+                    <div class="text-4xl font-light mb-8" style="color: var(--primary);">From LKR 250,000</div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Reception hall for up to 200 guests</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Basic stage decoration</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Standard sound system</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Buffet meal (rice & curry)</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Welcome drinks</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Service staff</li>
+                    </ul>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="card-hover bg-white p-10 border-4 relative" style="border-color: var(--primary);">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 px-6 py-2 text-white text-xs tracking-widest uppercase green-gradient">Most Popular</div>
+                    <h4 class="text-2xl font-light mb-2" style="color: var(--accent);">Premium Package</h4>
+                    <div class="text-4xl font-light mb-8" style="color: var(--primary);">From LKR 500,000</div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Reception hall for up to 500 guests</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Luxury themed decorations</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Professional DJ & sound system</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Multi-cuisine buffet</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Bridal suite access</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Wedding coordinator</li>
+                    </ul>
+                </div>
+
+                <!-- Luxury Package -->
+                <div class="card-hover bg-white p-10 border-2" style="border-color: var(--primary);">
+                    <h4 class="text-2xl font-light mb-2" style="color: var(--accent);">Luxury Package</h4>
+                    <div class="text-4xl font-light mb-8" style="color: var(--primary);">Custom Pricing</div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Everything in Premium</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Live band performance</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Premium floral arrangements</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Fireworks display</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Champagne toast</li>
+                        <li class="flex items-start"><i class="fas fa-check mr-3 mt-1" style="color: var(--primary);"></i> Dedicated event manager</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="text-3xl font-light text-center mb-10" style="color: var(--accent);">Popular Add-Ons</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-white border-2" style="border-color: var(--primary);">
+                    <i class="fas fa-compact-disc text-4xl mb-4" style="color: var(--primary);"></i>
+                    <h5 class="font-light mb-2" style="color: var(--accent);">DJ Services</h5>
+                    <p class="text-sm font-medium" style="color: var(--primary);">LKR 25,000</p>
+                </div>
+                <div class="text-center p-6 bg-white border-2" style="border-color: var(--primary);">
+                    <i class="fas fa-fire text-4xl mb-4" style="color: var(--primary);"></i>
+                    <h5 class="font-light mb-2" style="color: var(--accent);">Fireworks</h5>
+                    <p class="text-sm font-medium" style="color: var(--primary);">LKR 50,000</p>
+                </div>
+                <div class="text-center p-6 bg-white border-2" style="border-color: var(--primary);">
+                    <i class="fas fa-video text-4xl mb-4" style="color: var(--primary);"></i>
+                    <h5 class="font-light mb-2" style="color: var(--accent);">Videography</h5>
+                    <p class="text-sm font-medium" style="color: var(--primary);">LKR 40,000</p>
+                </div>
+                <div class="text-center p-6 bg-white border-2" style="border-color: var(--primary);">
+                    <i class="fas fa-spa text-4xl mb-4" style="color: var(--primary);"></i>
+                    <h5 class="font-light mb-2" style="color: var(--accent);">Bridal Makeup</h5>
+                    <p class="text-sm font-medium" style="color: var(--primary);">LKR 30,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline" style="color: var(--accent);">Photo Gallery</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex justify-center space-x-6 mb-12 flex-wrap gap-y-4">
+                <button class="filter-btn px-8 py-3 text-sm tracking-widest uppercase font-medium transition border-2" data-filter="all" style="background: var(--primary); color: white; border-color: var(--primary);">All</button>
+                <button class="filter-btn px-8 py-3 text-sm tracking-widest uppercase font-medium transition border-2" data-filter="weddings" style="background: transparent; color: var(--accent); border-color: var(--primary);">Weddings</button>
+                <button class="filter-btn px-8 py-3 text-sm tracking-widest uppercase font-medium transition border-2" data-filter="outdoor" style="background: transparent; color: var(--accent); border-color: var(--primary);">Outdoor</button>
+                <button class="filter-btn px-8 py-3 text-sm tracking-widest uppercase font-medium transition border-2" data-filter="reception" style="background: transparent; color: var(--accent); border-color: var(--primary);">Reception</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800" alt="Wedding Ceremony" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Elegant Wedding Ceremony</h4>
+                            <p class="text-sm tracking-wide opacity-90">Outdoor Wedding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800" alt="Wedding Reception" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Grand Reception</h4>
+                            <p class="text-sm tracking-wide opacity-90">Indoor Celebration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="Wedding Decoration" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Stunning Decorations</h4>
+                            <p class="text-sm tracking-wide opacity-90">Themed Setup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800" alt="Garden Setup" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Garden Event Setup</h4>
+                            <p class="text-sm tracking-wide opacity-90">Outdoor Venue</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800" alt="Outdoor Ceremony" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Outdoor Ceremony</h4>
+                            <p class="text-sm tracking-wide opacity-90">Garden Setting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="reception">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f29da8a39e?w=800" alt="Reception Hall" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Main Reception Hall</h4>
+                            <p class="text-sm tracking-wide opacity-90">Elegant Interior</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="reception">
+                    <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?w=800" alt="Dining Tables" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Elegant Table Settings</h4>
+                            <p class="text-sm tracking-wide opacity-90">Reception Dining</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1522413452208-996ff3f3e740?w=800" alt="Wedding Toast" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Celebration Moments</h4>
+                            <p class="text-sm tracking-wide opacity-90">Toast & Cheers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer aspect-[4/3]" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800" alt="Garden Party" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6 text-white">
+                        <div>
+                            <h4 class="text-2xl font-light mb-1">Evening Garden Party</h4>
+                            <p class="text-sm tracking-wide opacity-90">Fairy Lights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 texture-overlay" style="background: var(--bg-cream);">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-light mb-6 luxury-underline" style="color: var(--accent);">Contact Us</h2>
+                <div class="accent-line"></div>
+                <p class="text-lg mt-8" style="color: var(--text-dark);">Get in touch to plan your perfect event</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-3xl font-light mb-8" style="color: var(--accent);">Get In Touch</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-2xl mr-6 mt-1" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-medium mb-2 tracking-wide" style="color: var(--accent);">Address</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">Mallehewa Road, Kottala<br>Veyangoda 11100<br>Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-2xl mr-6 mt-1" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-medium mb-2 tracking-wide" style="color: var(--accent);">Phone</h4>
+                                <p class="text-sm"><a href="tel:+94771591342" class="hover:opacity-70 transition" style="color: var(--text-dark);">077 159 1342</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-2xl mr-6 mt-1" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-medium mb-2 tracking-wide" style="color: var(--accent);">Email</h4>
+                                <p class="text-sm"><a href="mailto:info@chance.lk" class="hover:opacity-70 transition" style="color: var(--text-dark);">info@chance.lk</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-globe text-2xl mr-6 mt-1" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-medium mb-2 tracking-wide" style="color: var(--accent);">Website</h4>
+                                <p class="text-sm"><a href="https://www.chance.lk" target="_blank" class="hover:opacity-70 transition" style="color: var(--text-dark);">www.chance.lk</a></p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <h4 class="font-medium mb-4 tracking-wide" style="color: var(--accent);">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.tiktok.com" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 transition hover:bg-primary hover:text-white" style="border-color: var(--primary); color: var(--primary);"><i class="fab fa-tiktok"></i></a>
+                                <a href="https://www.facebook.com" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 transition hover:bg-primary hover:text-white" style="border-color: var(--primary); color: var(--primary);"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.youtube.com" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 transition hover:bg-primary hover:text-white" style="border-color: var(--primary); color: var(--primary);"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 transition hover:bg-primary hover:text-white" style="border-color: var(--primary); color: var(--primary);"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-10 border-2" style="border-color: var(--primary);">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="eventType" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Event Type *</label>
+                                <select id="eventType" name="eventType" required class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);">
+                                    <option value="">Select Event Type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="outdoor">Outdoor Event</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="eventDate" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Preferred Date</label>
+                                <input type="date" id="eventDate" name="eventDate" class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="guests" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" placeholder="Estimated number" class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm tracking-wide mb-2 font-medium" style="color: var(--accent);">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your event..." class="w-full px-4 py-3 border-2 text-sm focus:outline-none transition" style="border-color: var(--primary);"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-premium px-8 py-4 text-white text-sm tracking-widest uppercase font-medium relative green-gradient">Send Inquiry</button>
+                    </form>
+                    <div id="formMessage" class="mt-4 text-center text-sm"></div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-light text-center mb-8" style="color: var(--accent);">Find Us Here</h3>
+                <div class="overflow-hidden shadow-2xl border-4" style="border-color: var(--primary);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0!2d80.0!3d7.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDAnMDAuMCJOIDgwwrAwMCcwMC4wIkU!5e0!3m2!1sen!2slk!4v1234567890"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h3 class="text-4xl font-light text-center mb-12" style="color: var(--accent);">Frequently Asked Questions</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 border-2" style="border-color: var(--primary);">
+                        <h4 class="flex items-center text-lg font-light mb-4" style="color: var(--accent);">
+                            <i class="fas fa-question-circle mr-4" style="color: var(--primary);"></i>
+                            How do I book an event?
+                        </h4>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-dark);">Simply fill out our contact form or call us at 077 159 1342. Our event coordinators will discuss your requirements and schedule a venue visit.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border-2" style="border-color: var(--primary);">
+                        <h4 class="flex items-center text-lg font-light mb-4" style="color: var(--accent);">
+                            <i class="fas fa-question-circle mr-4" style="color: var(--primary);"></i>
+                            What is your cancellation policy?
+                        </h4>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-dark);">Cancellations made 60+ days before receive a full refund. 30-60 days: 50% refund. Less than 30 days: deposits are non-refundable.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border-2" style="border-color: var(--primary);">
+                        <h4 class="flex items-center text-lg font-light mb-4" style="color: var(--accent);">
+                            <i class="fas fa-question-circle mr-4" style="color: var(--primary);"></i>
+                            How far in advance should I book?
+                        </h4>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-dark);">We recommend booking 6-12 months in advance for weddings, especially during peak season (November-April).</p>
+                    </div>
+
+                    <div class="bg-white p-8 border-2" style="border-color: var(--primary);">
+                        <h4 class="flex items-center text-lg font-light mb-4" style="color: var(--accent);">
+                            <i class="fas fa-question-circle mr-4" style="color: var(--primary);"></i>
+                            Do you provide catering?
+                        </h4>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-dark);">Yes! We have in-house catering with customizable menus including Sri Lankan, Indian, Chinese, and Continental cuisines.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border-2" style="border-color: var(--primary);">
+                        <h4 class="flex items-center text-lg font-light mb-4" style="color: var(--accent);">
+                            <i class="fas fa-question-circle mr-4" style="color: var(--primary);"></i>
+                            Can we bring our own decorators?
+                        </h4>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-dark);">Yes, you're welcome to work with your preferred decorators. We also have partnerships with excellent companies.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border-2" style="border-color: var(--primary);">
+                        <h4 class="flex items-center text-lg font-light mb-4" style="color: var(--accent);">
+                            <i class="fas fa-question-circle mr-4" style="color: var(--primary);"></i>
+                            Is parking available?
+                        </h4>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-dark);">Yes, we have ample on-site parking for up to 100 vehicles with security and attendants provided.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 text-white" style="background: var(--accent);">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-3xl font-light mb-4">Hotel Chance Palace</h3>
+                    <p class="text-sm leading-relaxed mb-6 opacity-90">Creating unforgettable memories in Veyangoda since 2010. Your premier destination for weddings and special events.</p>
+                    <div class="flex text-xl mb-3" style="color: var(--primary);">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="text-xs opacity-75">4.0/5 (497 Google Reviews)</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-light mb-6 tracking-wide" style="color: var(--primary);">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:opacity-70 transition">Home</a></li>
+                        <li><a href="#about" class="hover:opacity-70 transition">About Us</a></li>
+                        <li><a href="#services" class="hover:opacity-70 transition">Services</a></li>
+                        <li><a href="#gallery" class="hover:opacity-70 transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:opacity-70 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-light mb-6 tracking-wide" style="color: var(--primary);">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#services" class="hover:opacity-70 transition">Wedding Packages</a></li>
+                        <li><a href="#services" class="hover:opacity-70 transition">Outdoor Events</a></li>
+                        <li><a href="#services" class="hover:opacity-70 transition">Reception Hall</a></li>
+                        <li><a href="#services" class="hover:opacity-70 transition">Catering</a></li>
+                        <li><a href="#services" class="hover:opacity-70 transition">Event Planning</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-light mb-6 tracking-wide" style="color: var(--primary);">Contact Info</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start opacity-90">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1"></i>
+                            <span>Mallehewa Road, Kottala, Veyangoda 11100</span>
+                        </li>
+                        <li class="flex items-center opacity-90">
+                            <i class="fas fa-phone mr-3"></i>
+                            <a href="tel:+94771591342" class="hover:opacity-70 transition">077 159 1342</a>
+                        </li>
+                        <li class="flex items-center opacity-90">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <a href="mailto:info@chance.lk" class="hover:opacity-70 transition">info@chance.lk</a>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.tiktok.com" target="_blank" class="w-10 h-10 flex items-center justify-center border-2 transition hover:bg-white hover:text-black" style="border-color: var(--primary);"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 flex items-center justify-center border-2 transition hover:bg-white hover:text-black" style="border-color: var(--primary);"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" class="w-10 h-10 flex items-center justify-center border-2 transition hover:bg-white hover:text-black" style="border-color: var(--primary);"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 flex items-center justify-center border-2 transition hover:bg-white hover:text-black" style="border-color: var(--primary);"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t-2 pt-8 text-center text-sm opacity-75" style="border-color: var(--primary);">
+                <p>&copy; 2026 Hotel Chance Palace. All rights reserved. | <a href="#" class="hover:opacity-70">Privacy Policy</a> | <a href="#" class="hover:opacity-70">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 w-14 h-14 flex items-center justify-center text-white shadow-2xl opacity-0 pointer-events-none transition duration-300 green-gradient">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hero Slider
+        const slides = document.querySelectorAll('.hero-slide');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-advance slides
+        setInterval(nextSlide, 6000);
+
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => {
+                    b.style.background = 'transparent';
+                    b.style.color = 'var(--accent)';
+                });
+                btn.style.background = 'var(--primary)';
+                btn.style.color = 'white';
+
+                // Filter items
+                const filter = btn.dataset.filter;
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.innerHTML = '<p style="color: var(--primary); font-weight: 500;">Thank you for your inquiry! We will contact you soon.</p>';
+            contactForm.reset();
+            setTimeout(() => {
+                formMessage.innerHTML = '';
+            }, 5000);
+        });
+
+        // Scroll to Top
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.add('opacity-100');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.btn-premium').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                const span = this.querySelector('span');
+                if (span) span.style.color = 'var(--primary)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                const span = this.querySelector('span');
+                if (span) span.style.color = 'white';
+            });
+        });
+
+        // Social icon hover effects
+        document.querySelectorAll('a[href*="tiktok"], a[href*="facebook"], a[href*="youtube"], a[href*="instagram"]').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.background = 'var(--primary)';
+                this.style.color = 'white';
+            });
+            link.addEventListener('mouseleave', function() {
+                if (!this.closest('footer')) {
+                    this.style.background = 'transparent';
+                    this.style.color = 'var(--primary)';
+                } else {
+                    this.style.background = 'transparent';
+                    this.style.color = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
